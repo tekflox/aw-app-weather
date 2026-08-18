@@ -1,0 +1,17 @@
+{
+  "mcpServers": {
+    "weather": {
+      "enabled": true,
+      "type": "stdio",
+      "command": "python3",
+      "args": [
+        "-m",
+        "weather_app.mcp_server"
+      ],
+      "cwd": "/opt/aw-workspace/apps/weather",
+      "env": {
+        "PYTHONUNBUFFERED": "1"
+      }
+    }
+  }
+}

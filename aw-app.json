@@ -1,0 +1,51 @@
+{
+  "manifest_version": 1,
+  "id": "weather",
+  "name": "Weather",
+  "version": "0.1.0",
+  "description": "Current conditions and a daily forecast for any place on Earth, by latitude/longitude — through Open-Meteo, a free API with no key and no account. Ports agentic-workspace's aw-open-meteo MCP into aw-workspace. Pair with aw-google-maps' geocode_address, or a mobile companion app's get_location, to resolve a place name into coordinates first.",
+  "icon": "cloud-sun",
+  "tier": "inprocess",
+  "requires_ui_refresh": false,
+  "category": "Integrations",
+  "publisher": "TekFlox",
+  "resource_estimate": {
+    "cpu": "low",
+    "memory": "low",
+    "disk": "low"
+  },
+  "runtime": {
+    "python": ">=3.11",
+    "entrypoint": "weather_app.plugin:WeatherAppPlugin",
+    "pip_requires": []
+  },
+  "permissions": [],
+  "contributes": {
+    "mcp": {
+      "reload_on_save": false,
+      "provides": [
+        "get_current_weather",
+        "get_weather_forecast"
+      ]
+    },
+    "skills": [
+      {
+        "id": "aw-weather",
+        "path": "skills/aw-weather/SKILL.md",
+        "description": "Current conditions and daily forecast lookups by lat/lon through this app's aw-weather MCP server — which tool answers which question, and how to resolve a place name into coordinates first."
+      }
+    ]
+  },
+  "dependencies": {
+    "apps": [
+      {
+        "id": "mcp-gateway",
+        "version": ">=0.1.0",
+        "required": true,
+        "reason": "This app ships a static mcp.json (the 'weather' server) that MCP Gateway discovers and merges; without the gateway no agent can reach its tools."
+      }
+    ],
+    "note": "Runtime-enforced app dependency: aw-workspace loads mcp-gateway before this app so the gateway can scan weather/mcp.json."
+  },
+  "migrations": {}
+}
