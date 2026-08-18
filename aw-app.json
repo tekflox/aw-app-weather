@@ -2,8 +2,8 @@
   "manifest_version": 1,
   "id": "weather",
   "name": "Weather",
-  "version": "0.1.0",
-  "description": "Current conditions and a daily forecast for any place on Earth, by latitude/longitude — through Open-Meteo, a free API with no key and no account. Ports agentic-workspace's aw-open-meteo MCP into aw-workspace. Pair with aw-google-maps' geocode_address, or a mobile companion app's get_location, to resolve a place name into coordinates first.",
+  "version": "0.2.0",
+  "description": "Current conditions and a daily forecast for any place on Earth, by latitude/longitude \u2014 through Open-Meteo, a free API with no key and no account. Ports agentic-workspace's aw-open-meteo MCP into aw-workspace. Pair with aw-google-maps' geocode_address, or a mobile companion app's get_location, to resolve a place name into coordinates first.",
   "icon": "cloud-sun",
   "tier": "inprocess",
   "requires_ui_refresh": false,
@@ -32,7 +32,7 @@
       {
         "id": "aw-weather",
         "path": "skills/aw-weather/SKILL.md",
-        "description": "Current conditions and daily forecast lookups by lat/lon through this app's aw-weather MCP server — which tool answers which question, and how to resolve a place name into coordinates first."
+        "description": "Current conditions and daily forecast lookups by lat/lon through this app's aw-weather MCP server \u2014 which tool answers which question, and how to resolve a place name into coordinates first."
       }
     ]
   },
